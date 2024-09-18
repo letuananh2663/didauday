@@ -14,9 +14,9 @@ import { Button } from "@/components/ui/button";
 
 export default function LandingPage() {
   return (
-    <div className="mx-auto w-full flex-1 flex-col items-center justify-center gap-2 lg:flex-row">
-      <div className="bg-blue-500 w-full px-32 flex justify-around">
-        <div className="relative mb-8 h-[240px] w-[240px] lg:mb-0 lg:h-[424px] lg:w-[424px]">
+    <div className="w-full">
+      <div className="mx-auto bg-blue-500 w-full p-32 flex justify-around flex-1 flex-col lg:flex-row">
+        <div className="relative mb-8 h-[480px] w-[480px] lg:mb-0 lg:h-[424px] lg:w-[424px] self-center">
           <Image src="/icon.svg" alt="Di Dau Day" fill />
         </div>
 

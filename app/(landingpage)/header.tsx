@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 export const Header = () => {
 
     return (
-        <header className="h-20 w-full">
+        <header className="h-20 w-full ">
             <div className="flex h-full items-center justify-between  bg-red-400">
                 <Link href="/" className="flex items-center gap-x-3 pb-7 pl-4 pt-8">
                     <Image src="/logo.svg" alt="Di Dau Day" height={160} width={160} />
