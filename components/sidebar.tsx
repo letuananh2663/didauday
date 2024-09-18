@@ -41,20 +41,17 @@ export const Sidebar = ({ className }: SidebarProps) => {
             </div>
 
             <div className="p-4">
-                <ClerkProvider
-                    afterSignOutUrl="/">
-                    <ClerkLoading>
-                        <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
-                    </ClerkLoading>
+                <ClerkLoading>
+                    <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
+                </ClerkLoading>
 
-                    <ClerkLoaded>
-                        <UserButton
-                            appearance={{
-                                elements: { userButtonPopoverCard: { pointerEvents: "initial" } },
-                            }}
-                        />
-                    </ClerkLoaded>
-                </ClerkProvider>
+                <ClerkLoaded>
+                    <UserButton
+                        appearance={{
+                            elements: { userButtonPopoverCard: { pointerEvents: "initial" } },
+                        }}
+                    />
+                </ClerkLoaded>
             </div>
         </div>
     );
