@@ -17,7 +17,7 @@ export default function LandingPage() {
     <div className="w-full">
       <div className="mx-auto bg-blue-500 w-full p-32 flex justify-around flex-1 flex-col lg:flex-row">
         <div className="relative mb-8 h-[480px] w-[480px] lg:mb-0 lg:h-[424px] lg:w-[424px] self-center">
-          <Image src="/icon.svg" alt="Di Dau Day" fill />
+          <Image src="/icon.svg" alt="Đi đâu đây" fill />
         </div>
 
         <div className="flex flex-col items-center gap-y-8 justify-center">
