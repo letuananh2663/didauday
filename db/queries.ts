@@ -6,7 +6,7 @@ import db from "@/db/drizzle";
 import { challengeProgress, courses, units, userProgress } from "@/db/schema";
 
 export const getUserProgress = cache(async () => {
-  const { userId } = auth();
+  const { userId } = await auth();
 
   if (!userId) return null;
 
@@ -21,7 +21,7 @@ export const getUserProgress = cache(async () => {
 });
 
 export const getUnits = cache(async () => {
-  const { userId } = auth();
+  const { userId } = await auth();
   const userProgress = await getUserProgress();
 
   if (!userId || !userProgress?.activeCourseId) return [];
@@ -36,7 +36,9 @@ export const getUnits = cache(async () => {
           challenges: {
             orderBy: (challenges, { asc }) => [asc(challenges.order)],
             with: {
-              challengeProgress: true,
+              challengeProgress: {
+                where: eq(challengeProgress.userId, userId),
+              },
             },
           },
         },
