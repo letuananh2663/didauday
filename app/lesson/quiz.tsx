@@ -1,8 +1,10 @@
 "use client"
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { Header } from "./header";
+import { Footer } from "./footer";
 import { Challenge } from "./challenge";
 import { QuestionBubble } from "./question-bubble";
 import { challengeOptions, challenges, challengesEnum } from "@/db/schema";
@@ -25,6 +27,9 @@ export const Quiz = ({
     initialLessonChallenges,
     userSubscription,
 }: Props) => {
+    const router = useRouter();
+
+    const [lessonId] = useState(initialLessonId);
     const [hearts, setHearts] = useState(initialHearts);
     const [percentage, setPercentage] = useState(initialPercentage);
     const [challenges] = useState(initialLessonChallenges);
@@ -33,8 +38,17 @@ export const Quiz = ({
         return uncompletedIndex === -1 ? 0 : uncompletedIndex;
     });
 
+    const [selectedOption, setSelectedOption] = useState<number>();
+    const [status, setStatus] = useState<"none" | "wrong" | "correct">("none");
+
     const challenge = challenges[activeIndex];
     const options = challenge?.challengeOptions ?? [];
+
+    const onSelect = (id: number) => {
+        if (status !== "none") return;
+
+        setSelectedOption(id);
+    };
 
     const title = challenge.type === "ASSIST" ? "Select the correct answer" : challenge.question;
 
@@ -60,9 +74,9 @@ export const Quiz = ({
 
                             <Challenge
                                 options={options}
-                                onSelect={() => { }}
-                                status="wrong"
-                                selectedOption={undefined}
+                                onSelect={onSelect}
+                                status={status}
+                                selectedOption={selectedOption}
                                 disabled={false}
                                 type={challenge.type}
                             />
@@ -70,6 +84,11 @@ export const Quiz = ({
                     </div>
                 </div>
             </div>
+            <Footer
+                lessonId={lessonId}
+                status={status}
+                onCheck={() => { }}
+            />
         </>
     )
 }
