@@ -15,9 +15,9 @@ import { Button } from "@/components/ui/button";
 export const Header = () => {
 
     return (
-        <header className="h-20 w-full ">
-            <div className="flex h-full items-center justify-between  bg-red-500">
-                <Link href="/" className="flex items-center gap-x-3 pb-7 pl-4 pt-8">
+        <header className="h-16 w-full lg:mb-8">
+            <div className="flex h-full items-center justify-between shadow-xl shadow-red-200">
+                <Link href="/" className="flex h-full items-center gap-x-3 px-12 bg-red-500">
                     <Image src="/logo.svg" alt="Di Dau Day" height={160} width={160} />
                 </Link>
 
@@ -26,9 +26,15 @@ export const Header = () => {
                         <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
                     </ClerkLoading>
                     <ClerkLoaded>
-                        <SignedIn>
-                            <UserButton />
-                        </SignedIn>
+                        <Button className="text-rose-500" variant="ghost" size="lg">
+                            <a href="/storyline">Storyline</a>
+                        </Button>
+
+                        <div className="flex self-center">
+                            <SignedIn>
+                                <UserButton />
+                            </SignedIn>
+                        </div>
 
                         <SignedOut>
                             <SignInButton
@@ -36,7 +42,7 @@ export const Header = () => {
                                 fallbackRedirectUrl="/learn"
                                 signUpFallbackRedirectUrl="/learn"
                             >
-                                <Button size="lg" variant="ghost">
+                                <Button className="text-rose-500" size="lg" variant="ghost">
                                     Đăng nhập
                                 </Button>
                             </SignInButton>
