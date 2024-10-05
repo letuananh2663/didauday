@@ -16,7 +16,7 @@ export const Header = ({ title }: HeaderProps) => {
                 </Button>
             </Link>
 
-            <h1 className="text-lg font-bold">{title}</h1>
+            <h1 className="text-3xl font-black uppercase text-red-500">{title}</h1>
             <div aria-hidden />
         </div>
     );
