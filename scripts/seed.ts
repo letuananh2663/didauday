@@ -25,17 +25,27 @@ const main = async () => {
       {
         id: 1,
         title: "Phố cổ Hội An",
-        imageSrc: "/icon.svg",
+        imageSrc: "/hoian.svg",
       },
       {
         id: 2,
         title: "Thánh địa Mỹ Sơn",
-        imageSrc: "/icon.svg",
+        imageSrc: "/myson.svg",
       },
       {
         id: 3,
         title: "Cố đô Huế",
-        imageSrc: "/icon.svg",
+        imageSrc: "/codo.svg",
+      },
+      {
+        id: 4,
+        title: "Thành nhà Hồ",
+        imageSrc: "/nhaho.svg",
+      },
+      {
+        id: 5,
+        title: "Thành nhà Hồ",
+        imageSrc: "/hoangthanh.svg",
       },
     ]);
 

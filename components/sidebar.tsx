@@ -1,4 +1,4 @@
-import { ClerkProvider, ClerkLoading, ClerkLoaded, UserButton } from "@clerk/nextjs";
+import { ClerkLoading, ClerkLoaded, UserButton } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,13 +19,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 className
             )}
         >
-            <Link href="/learn">
-                <div className="flex items-center gap-x-3 pb-7 pl-4 pt-8">
-                    <Image src="/icon.svg" alt="Đi đâu đây" height={40} width={40} />
-
-                    <h1 className="text-2xl font-extrabold tracking-wide text-red-500">
-                        Đi đâu đây
-                    </h1>
+            <Link href="/">
+                <div className="flex items-center gap-x-3 pb-7 pl-4 pt-8 justify-center">
+                    <Image src="/icon.svg" alt="Đi đâu đây" height={100} width={100} />
                 </div>
             </Link>
 
@@ -36,7 +32,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     href="/leaderboard"
                     iconSrc="/leaderboard.svg"
                 />
-                <SidebarItem label="Quests" href="/quests" iconSrc="/quests.svg" />
+                <SidebarItem label="Quests" href="/quests" iconSrc="/quest.svg" />
                 <SidebarItem label="Shop" href="/shop" iconSrc="/shop.svg" />
             </div>
 

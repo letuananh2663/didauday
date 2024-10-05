@@ -3,6 +3,7 @@ import { useKey, useMedia } from "react-use";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type FooterProps = {
     onCheck: () => void;
@@ -31,14 +32,26 @@ export const Footer = ({
             <div className="mx-auto flex h-full max-w-[1140px] items-center justify-between px-6 lg:px-10">
                 {status === "correct" && (
                     <div className="flex items-center text-base font-bold text-green-500 lg:text-2xl">
-                        <CheckCircle className="mr-4 h-6 w-6 lg:h-10 lg:w-10" />
+                        {/* <CheckCircle className="mr-4 h-6 w-6 lg:h-10 lg:w-10" /> */}
+                        <Image
+                            src="/mascot_fun.svg"
+                            alt="Correct"
+                            height={80}
+                            width={80}
+                        />
                         Nicely done!
                     </div>
                 )}
 
                 {status === "wrong" && (
                     <div className="flex items-center text-base font-bold text-rose-500 lg:text-2xl">
-                        <XCircle className="mr-4 h-6 w-6 lg:h-10 lg:w-10" />
+                        {/* <XCircle className="mr-4 h-6 w-6 lg:h-10 lg:w-10" /> */}
+                        <Image
+                            src="/mascot_sad.svg"
+                            alt="Incorrect"
+                            height={80}
+                            width={80}
+                        />
                         Try again.
                     </div>
                 )}

@@ -7,7 +7,6 @@ import {
   SignedOut,
 } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -15,9 +14,9 @@ import { Button } from "@/components/ui/button";
 export default function LandingPage() {
   return (
     <div className="w-full">
-      <div className="mx-auto bg-[url('/background.png')] bg-contain bg-repeat-round lg:bg-cover lg:h-[866px] w-full p-32 flex justify-end flex-1 flex-col lg:flex-row">
+      <div className="mx-auto mt-[-32px] lg:mt-[-40px] bg-[url('/background.svg')] bg-contain bg-repeat-round lg:bg-cover lg:h-[866px] w-full p-32 flex justify-end flex-1 flex-col lg:flex-row">
         <div className="flex flex-col items-center gap-y-8 justify-center">
-          <div className="flex w-full lg:w-80 flex-col items-center gap-y-3 mr-32">
+          <div className="flex w-full lg:w-80 flex-col items-center gap-y-3 lg:mr-32">
             <ClerkLoading>
               <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
             </ClerkLoading>

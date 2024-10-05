@@ -10,12 +10,22 @@ import { Loader } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { cn } from "@/lib/utils";
+
 import { Button } from "@/components/ui/button";
 
-export const Header = () => {
+type SidebarProps = {
+    className?: string;
+};
+
+export const Header = ({ className }: SidebarProps) => {
 
     return (
-        <header className="h-16 w-full lg:mb-8">
+        <header
+            className={cn(
+                "h-16 w-full lg:mb-8",
+                className
+            )}>
             <div className="flex h-full items-center justify-between shadow-xl shadow-red-200">
                 <Link href="/" className="flex h-full items-center gap-x-3 px-12 bg-red-500">
                     <Image src="/logo.svg" alt="Di Dau Day" height={160} width={160} />
