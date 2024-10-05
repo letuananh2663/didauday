@@ -42,16 +42,6 @@ export const Quiz = ({
     userSubscription,
 }: Props) => {
     const router = useRouter();
-    const [
-        correctAudio,
-        correctControls
-    ] = useAudio({ src: "/correct.wav" });
-    const [
-        incorrectAudio,
-        incorrectControls
-    ] = useAudio({
-        src: "/incorrect.wav",
-    });
     const [finishAudio] = useAudio({
         src: "/finish.mp3",
         autoPlay: true,
@@ -126,7 +116,6 @@ export const Quiz = ({
                             return;
                         }
 
-                        void correctControls.play();
                         setStatus("correct");
                         setPercentage((prev) => prev + 100 / challenges.length);
 
@@ -147,7 +136,6 @@ export const Quiz = ({
                             return;
                         }
 
-                        void incorrectControls.play();
                         setStatus("wrong");
 
                         if (!response?.error) setHearts((prev) => Math.max(prev - 1, 0));
@@ -211,8 +199,6 @@ export const Quiz = ({
 
     return (
         <>
-            {incorrectAudio}
-            {correctAudio}
             <Header
                 hearts={hearts}
                 percentage={percentage}
