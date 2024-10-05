@@ -1,4 +1,3 @@
-import { CheckCircle, XCircle } from "lucide-react";
 import { useKey, useMedia } from "react-use";
 
 import { Button } from "@/components/ui/button";
@@ -32,7 +31,6 @@ export const Footer = ({
             <div className="mx-auto flex h-full max-w-[1140px] items-center justify-between px-6 lg:px-10">
                 {status === "correct" && (
                     <div className="flex items-center text-base font-bold text-sky-500 lg:text-2xl">
-                        {/* <CheckCircle className="mr-4 h-6 w-6 lg:h-10 lg:w-10" /> */}
                         <Image
                             src="/mascot_fun.svg"
                             alt="Correct"
@@ -45,7 +43,6 @@ export const Footer = ({
 
                 {status === "wrong" && (
                     <div className="flex items-center text-base font-bold text-rose-500 lg:text-2xl">
-                        {/* <XCircle className="mr-4 h-6 w-6 lg:h-10 lg:w-10" /> */}
                         <Image
                             src="/mascot_sad.svg"
                             alt="Incorrect"

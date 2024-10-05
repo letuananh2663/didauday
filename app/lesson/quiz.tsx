@@ -12,7 +12,7 @@ import { reduceHearts } from "@/actions/user-progress";
 import { useHeartsModal } from "@/store/use-hearts-modal";
 import { usePracticeModal } from "@/store/use-practice-modal";
 import { upsertChallengeProgress } from "@/actions/challenge-progress";
-import { challengeOptions, challenges, challengesEnum, userSubscription } from "@/db/schema";
+import { challengeOptions, challenges, userSubscription } from "@/db/schema";
 
 import { Header } from "./header";
 import { Footer } from "./footer";
@@ -44,12 +44,10 @@ export const Quiz = ({
     const router = useRouter();
     const [
         correctAudio,
-        _c,
         correctControls
     ] = useAudio({ src: "/correct.wav" });
     const [
         incorrectAudio,
-        _i,
         incorrectControls
     ] = useAudio({
         src: "/incorrect.wav",
