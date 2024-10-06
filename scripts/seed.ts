@@ -44,7 +44,7 @@ const main = async () => {
       },
       {
         id: 5,
-        title: "Thành nhà Hồ",
+        title: "Hoàng thành Thăng Long",
         imageSrc: "/hoangthanh.svg",
       },
     ]);
