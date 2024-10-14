@@ -7,12 +7,12 @@ import { auth, currentUser } from "@clerk/nextjs/server";
 
 import db from "@/db/drizzle";
 import { MAX_HEARTS, POINTS_TO_REFILL } from "@/constants";
-import { challengeProgress, challenges, userProgress } from "@/db/schema";
 import {
   getCourseById,
   getUserProgress,
   getUserSubscription,
 } from "@/db/queries";
+import { challengeProgress, challenges, userProgress } from "@/db/schema";
 
 export const upsertUserProgress = async (courseId: number) => {
   const { userId } = auth();
@@ -30,11 +30,14 @@ export const upsertUserProgress = async (courseId: number) => {
   const existingUserProgress = await getUserProgress();
 
   if (existingUserProgress) {
-    await db.update(userProgress).set({
-      activeCourseId: courseId,
-      userName: user.firstName || "User",
-      userImageSrc: user.imageUrl || "/icon.svg",
-    });
+    await db
+      .update(userProgress)
+      .set({
+        activeCourseId: courseId,
+        userName: user.firstName || "User",
+        userImageSrc: user.imageUrl || "/mascot.svg",
+      })
+      .where(eq(userProgress.userId, userId));
 
     revalidatePath("/courses");
     revalidatePath("/learn");
@@ -45,7 +48,7 @@ export const upsertUserProgress = async (courseId: number) => {
     userId,
     activeCourseId: courseId,
     userName: user.firstName || "User",
-    userImageSrc: user.imageUrl || "/icon.svg",
+    userImageSrc: user.imageUrl || "/mascot.svg",
   });
 
   revalidatePath("/courses");
