@@ -1,7 +1,6 @@
 "use client";
 
 import { useTransition } from "react";
-import { useRouter } from "next/navigation";
 
 import Image from "next/image";
 import { toast } from "sonner";
@@ -10,7 +9,6 @@ import { createStripeUrl } from "@/actions/user-subscription";
 import { Button } from "@/components/ui/button";
 import { refillHearts } from "@/actions/user-progress";
 import { MAX_HEARTS, POINTS_TO_REFILL } from "@/constants";
-import { usePaymentModal } from "@/store/use-payment-modal";
 
 type ItemsProps = {
     hearts: number;
@@ -23,7 +21,6 @@ export const Items = ({
     points,
     hasActiveSubscription,
 }: ItemsProps) => {
-    const { open: openHeartsModal } = usePaymentModal();
     const [pending, startTransition] = useTransition();
 
     const onRefillHearts = () => {
@@ -43,11 +40,6 @@ export const Items = ({
                 })
                 .catch(() => toast.error("Something went wrong."));
         });
-    };
-
-    const onSelectHearts = (heartCount: number) => {
-        if (pending) return;
-        openHeartsModal(heartCount);
     };
 
     return (
@@ -91,7 +83,7 @@ export const Items = ({
                     </p>
                 </div>
 
-                <Button onClick={() => onSelectHearts(1)} disabled={pending} aria-disabled={pending}>
+                <Button onClick={() => {}} disabled={pending} aria-disabled={pending}>
                     Upgrade
                 </Button>
             </div>
@@ -105,7 +97,7 @@ export const Items = ({
                     </p>
                 </div>
 
-                <Button onClick={() => onSelectHearts(3)} disabled={pending} aria-disabled={pending}>
+                <Button onClick={() => {}} disabled={pending} aria-disabled={pending}>
                     Upgrade
                 </Button>
             </div>

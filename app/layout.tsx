@@ -7,7 +7,6 @@ import { HeartsModal } from "@/components/modals/hearts-modal";
 import { PracticeModal } from "@/components/modals/practice-modal";
 import { DifficultModal } from "@/components/modals/difficult-modal";
 import "./globals.css";
-import PaymentModal from "@/components/modals/payment-modal";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -30,7 +29,6 @@ export default function RootLayout({
           <HeartsModal />
           <PracticeModal />
           <DifficultModal />
-          <PaymentModal/>
           {children}
         </body>
       </html>
