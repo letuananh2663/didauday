@@ -1,6 +1,7 @@
 "use client";
 
 import { useTransition } from "react";
+import { useRouter } from "next/navigation";
 
 import Image from "next/image";
 import { toast } from "sonner";
@@ -9,6 +10,7 @@ import { createStripeUrl } from "@/actions/user-subscription";
 import { Button } from "@/components/ui/button";
 import { refillHearts } from "@/actions/user-progress";
 import { MAX_HEARTS, POINTS_TO_REFILL } from "@/constants";
+import { usePaymentModal } from "@/store/use-payment-modal";
 
 type ItemsProps = {
     hearts: number;
@@ -21,6 +23,7 @@ export const Items = ({
     points,
     hasActiveSubscription,
 }: ItemsProps) => {
+    const { open: openHeartsModal } = usePaymentModal();
     const [pending, startTransition] = useTransition();
 
     const onRefillHearts = () => {
@@ -40,6 +43,11 @@ export const Items = ({
                 })
                 .catch(() => toast.error("Something went wrong."));
         });
+    };
+
+    const onSelectHearts = (heartCount: number) => {
+        if (pending) return;
+        openHeartsModal(heartCount);
     };
 
     return (
@@ -71,6 +79,34 @@ export const Items = ({
                             <p>{POINTS_TO_REFILL}</p>
                         </div>
                     )}
+                </Button>
+            </div>
+
+            <div className="flex w-full items-center gap-x-4 border-t-2 p-4 pt-8">
+                <Image src="/heart.svg" alt="Unlimited" height={60} width={60} />
+
+                <div className="flex-1">
+                    <p className="text-base font-bold text-neutral-700 lg:text-xl">
+                        1 hearts
+                    </p>
+                </div>
+
+                <Button onClick={() => onSelectHearts(1)} disabled={pending} aria-disabled={pending}>
+                    Upgrade
+                </Button>
+            </div>
+
+            <div className="flex w-full items-center gap-x-4 border-t-2 p-4 pt-8">
+                <Image src="/heart.svg" alt="Unlimited" height={60} width={60} />
+
+                <div className="flex-1">
+                    <p className="text-base font-bold text-neutral-700 lg:text-xl">
+                        3 hearts
+                    </p>
+                </div>
+
+                <Button onClick={() => onSelectHearts(3)} disabled={pending} aria-disabled={pending}>
+                    Upgrade
                 </Button>
             </div>
 
