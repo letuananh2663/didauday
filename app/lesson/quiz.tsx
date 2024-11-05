@@ -4,13 +4,14 @@ import { toast } from "sonner";
 import Image from "next/image";
 import Confetti from "react-confetti";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { useAudio, useMount, useWindowSize } from "react-use";
 
 import { MAX_HEARTS } from "@/constants";
 import { reduceHearts } from "@/actions/user-progress";
 import { useHeartsModal } from "@/store/use-hearts-modal";
 import { usePracticeModal } from "@/store/use-practice-modal";
+import { useDifficultModal } from "@/store/use-difficult-modal";
 import { upsertChallengeProgress } from "@/actions/challenge-progress";
 import { challengeOptions, challenges, userSubscription } from "@/db/schema";
 
@@ -52,6 +53,7 @@ export const Quiz = ({
     const [pending, startTransition] = useTransition();
     const { open: openHeartsModal } = useHeartsModal();
     const { open: openPracticeModal } = usePracticeModal();
+    const { open: openDifficultModal } = useDifficultModal();
 
     useMount(() => {
         if (initialPercentage === 100) openPracticeModal();
@@ -67,12 +69,26 @@ export const Quiz = ({
         const uncompletedIndex = challenges.findIndex((challenge) => !challenge.completed);
         return uncompletedIndex === -1 ? 0 : uncompletedIndex;
     });
+    const [difficultModalShown, setDifficultModalShown] = useState(false);
 
     const [selectedOption, setSelectedOption] = useState<number>();
     const [status, setStatus] = useState<"none" | "wrong" | "correct">("none");
 
     const challenge = challenges[activeIndex];
     const options = challenge?.challengeOptions ?? [];
+
+    useEffect(() => {
+        if (!challenge?.difficult) {
+            setDifficultModalShown(false);
+        }
+    });
+
+    useEffect(() => {
+        if (initialPercentage !== 100 && challenge?.difficult && !difficultModalShown) {
+            openDifficultModal();
+            setDifficultModalShown(true);
+        }
+    }, [challenge, difficultModalShown, initialPercentage, openDifficultModal]);
 
     const onNext = () => {
         setActiveIndex((current) => current + 1);
