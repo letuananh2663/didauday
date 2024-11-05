@@ -5,6 +5,7 @@ import {
     SelectInput,
     SimpleForm,
     TextInput,
+    BooleanInput,
     required,
 } from "react-admin";
 
@@ -13,6 +14,7 @@ export const ChallengeEdit = () => {
         <Edit>
             <SimpleForm>
                 <TextInput source="question" validate={[required()]} label="Question" />
+                <BooleanInput source="difficult" label="Difficult" />
                 <SelectInput
                     source="type"
                     validate={[required()]}

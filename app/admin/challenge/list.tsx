@@ -5,6 +5,7 @@ import {
     ReferenceField,
     SelectField,
     TextField,
+    BooleanField,
 } from "react-admin";
 
 export const ChallengeList = () => {
@@ -13,6 +14,7 @@ export const ChallengeList = () => {
             <Datagrid rowClick="edit">
                 <NumberField source="id" />
                 <TextField source="question" />
+                <BooleanField source="difficult"/>
                 <SelectField
                     source="type"
                     choices={[

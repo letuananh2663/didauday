@@ -89,10 +89,12 @@ export const reduceHearts = async (challengeId: number) => {
 
   if (currentUserProgress.hearts === 0) return { error: "hearts" };
 
+  const heartPenalty = challenge.difficult ? 2 : 1;
+
   await db
     .update(userProgress)
     .set({
-      hearts: Math.max(currentUserProgress.hearts - 1, 0),
+      hearts: Math.max(currentUserProgress.hearts - heartPenalty, 0),
     })
     .where(eq(userProgress.userId, userId));
 

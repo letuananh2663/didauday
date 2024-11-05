@@ -72,6 +72,7 @@ export const challenges = pgTable("challenges", {
   type: challengesEnum("type").notNull(),
   question: text("question").notNull(),
   order: integer("order").notNull(),
+  difficult: boolean("difficult").default(false),
 });
 
 export const challengesRelations = relations(challenges, ({ one, many }) => ({

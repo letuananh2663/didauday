@@ -128,6 +128,7 @@ export const Quiz = ({
             });
         } else {
             startTransition(() => {
+                const heartPenalty = challenge.difficult ? 2 : 1;
                 reduceHearts(challenge.id)
                     .then((response) => {
                         if (response?.error === "hearts") {
@@ -138,7 +139,7 @@ export const Quiz = ({
 
                         setStatus("wrong");
 
-                        if (!response?.error) setHearts((prev) => Math.max(prev - 1, 0));
+                        if (!response?.error) setHearts((prev) => Math.max(prev - heartPenalty, 0));
                     })
                     .catch(() => toast.error("Something went wrong. Please try again."));
             });
