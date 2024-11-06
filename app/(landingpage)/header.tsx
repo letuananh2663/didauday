@@ -40,6 +40,10 @@ export const Header = ({ className }: SidebarProps) => {
                             <a href="/storyline">Storyline</a>
                         </Button>
 
+                        <Button className="text-rose-500" variant="ghost" size="lg">
+                            <a href="/playrule">Playrule</a>
+                        </Button>
+
                         <div className="flex self-center">
                             <SignedIn>
                                 <UserButton />
