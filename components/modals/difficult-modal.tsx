@@ -32,11 +32,11 @@ export const DifficultModal = () => {
                     </div>
 
                     <DialogTitle className="text-center text-2xl font-bold">
-                        Difficult question
+                        Câu hỏi khó!
                     </DialogTitle>
 
                     <DialogDescription className="text-center text-base">
-                        Heads up! This question is a bit tricky. If you answer incorrectly, you will lose 2 hearts. But don’t worry, you’ve got this!
+                        Hãy cẩn thận vì đây là câu hỏi khó! Nếu bạn trả lời sai thì sẽ mất 2 tim. Nhưng mà chúng mình tin bạn sẽ làm được!   
                     </DialogDescription>
                 </DialogHeader>
 
@@ -48,7 +48,7 @@ export const DifficultModal = () => {
                             size="lg"
                             onClick={close}
                         >
-                            I understand
+                            Tôi đã hiểu 
                         </Button>
                     </div>
                 </DialogFooter>

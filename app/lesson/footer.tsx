@@ -37,7 +37,7 @@ export const Footer = ({
                             height={80}
                             width={80}
                         />
-                        Nicely done!
+                        Quá đã!
                     </div>
                 )}
 
@@ -49,7 +49,7 @@ export const Footer = ({
                             height={80}
                             width={80}
                         />
-                        Try again.
+                        Cố thử lại.
                     </div>
                 )}
 
@@ -59,7 +59,7 @@ export const Footer = ({
                         size={isMobile ? "sm" : "lg"}
                         onClick={() => (window.location.href = `/lesson/${lessonId}`)}
                     >
-                        Practice again
+                        Làm lại lần nữa
                     </Button>
                 )}
 
@@ -71,10 +71,10 @@ export const Footer = ({
                     size={isMobile ? "sm" : "lg"}
                     variant={status === "wrong" ? "danger" : "secondary"}
                 >
-                    {status === "none" && "Check"}
-                    {status === "correct" && "Next"}
-                    {status === "wrong" && "Retry"}
-                    {status === "completed" && "Continue"}
+                    {status === "none" && "Kiểm tra"}
+                    {status === "correct" && "Câu tiếp theo"}
+                    {status === "wrong" && "Thử lại"}
+                    {status === "completed" && "Đi tiếp"}
                 </Button>
             </div>
         </footer>

@@ -15,7 +15,7 @@ export const Quests = ({ points }: QuestsProps) => {
 
                 <Link href="/quests">
                     <Button size="sm" variant="primaryOutline">
-                        View all
+                        Xem tất cả
                     </Button>
                 </Link>
             </div>

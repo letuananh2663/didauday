@@ -36,7 +36,7 @@ export const HeartsModal = () => {
                 <DialogHeader>
                     <div className="mb-5 flex w-full items-center justify-center">
                         <Image
-                            src="/mascot_sad.png"
+                            src="/mascot_sad.svg"
                             alt="Mascot Sad"
                             height={80}
                             width={80}
@@ -44,11 +44,11 @@ export const HeartsModal = () => {
                     </div>
 
                     <DialogTitle className="text-center text-2xl font-bold">
-                        You ran out of hearts!
+                        Bạn hết tim mất rồi!
                     </DialogTitle>
 
                     <DialogDescription className="text-center text-base">
-                        Get Pro for unlimited hearts, or purchase them in the store.
+                        Nâng cấp tài khoản để nhận ngay số tim không giới hạn hoặc chọn mua trong cửa hàng.
                     </DialogDescription>
                 </DialogHeader>
 
@@ -60,7 +60,7 @@ export const HeartsModal = () => {
                             size="lg"
                             onClick={onClick}
                         >
-                            Get unlimited hearts
+                            Nhận số tim không giới hạn
                         </Button>
 
                         <Button
@@ -69,7 +69,7 @@ export const HeartsModal = () => {
                             size="lg"
                             onClick={close}
                         >
-                            No thanks
+                            Hong, cảm ơn
                         </Button>
                     </div>
                 </DialogFooter>

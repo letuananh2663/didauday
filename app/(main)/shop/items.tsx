@@ -49,7 +49,7 @@ export const Items = ({
 
                 <div className="flex-1">
                     <p className="text-base font-bold text-neutral-700 lg:text-xl">
-                        Refill hearts
+                        Nạp tim
                     </p>
                 </div>
 
@@ -63,7 +63,7 @@ export const Items = ({
                     }
                 >
                     {hearts === MAX_HEARTS ? (
-                        "full"
+                        "đầy"
                     ) : (
                         <div className="flex items-center">
                             <Image src="/points.svg" alt="Points" height={20} width={20} />
@@ -79,12 +79,12 @@ export const Items = ({
 
                 <div className="flex-1">
                     <p className="text-base font-bold text-neutral-700 lg:text-xl">
-                        1 hearts
+                        1 tim
                     </p>
                 </div>
 
-                <Button onClick={() => {}} disabled={pending} aria-disabled={pending}>
-                    Upgrade
+                <Button onClick={() => { }} disabled={pending} aria-disabled={pending}>
+                    Nâng cấp
                 </Button>
             </div>
 
@@ -93,12 +93,12 @@ export const Items = ({
 
                 <div className="flex-1">
                     <p className="text-base font-bold text-neutral-700 lg:text-xl">
-                        3 hearts
+                        3 tim
                     </p>
                 </div>
 
-                <Button onClick={() => {}} disabled={pending} aria-disabled={pending}>
-                    Upgrade
+                <Button onClick={() => { }} disabled={pending} aria-disabled={pending}>
+                    Nâng cấp
                 </Button>
             </div>
 
@@ -107,12 +107,12 @@ export const Items = ({
 
                 <div className="flex-1">
                     <p className="text-base font-bold text-neutral-700 lg:text-xl">
-                        Unlimited hearts
+                        Tim không giới hạn
                     </p>
                 </div>
 
                 <Button onClick={onUpgrade} disabled={pending} aria-disabled={pending}>
-                    {hasActiveSubscription ? "settings" : "upgrade"}
+                    {hasActiveSubscription ? "Cài đặt" : "Nâng cấp"}
                 </Button>
             </div>
         </ul>

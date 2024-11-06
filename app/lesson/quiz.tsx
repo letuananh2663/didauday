@@ -191,7 +191,7 @@ export const Quiz = ({
                     />
 
                     <h1 className="text-lg font-bold text-neutral-700 lg:text-3xl">
-                        Great job! <br /> You&apos;ve completed the lesson.
+                        Giỏi quá! <br /> Bạn đã hoàn thành chặng hành trình này.
                     </h1>
 
                     <div className="flex w-full items-center gap-x-4">
@@ -212,7 +212,7 @@ export const Quiz = ({
         );
     }
 
-    const title = challenge.type === "ASSIST" ? "Select the correct answer" : challenge.question;
+    const title = challenge.type === "ASSIST" ? "Chọn câu trả lời đúng" : challenge.question;
 
     return (
         <>

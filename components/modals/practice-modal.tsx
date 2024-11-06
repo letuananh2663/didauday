@@ -49,7 +49,7 @@ export const PracticeModal = () => {
                             size="lg"
                             onClick={close}
                         >
-                            I understand
+                            Tôi đã hiểu
                         </Button>
                     </div>
                 </DialogFooter>
