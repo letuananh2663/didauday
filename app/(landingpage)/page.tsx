@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 export default function LandingPage() {
   return (
     <div className="w-full">
-      <div className="mx-auto mt-[-32px] lg:mt-[-40px] bg-[url('/background.svg')] bg-contain bg-repeat-round lg:bg-cover lg:h-[866px] w-full p-32 flex justify-end flex-1 flex-col lg:flex-row">
+      <div className="mx-auto mt-[-32px] lg:mt-[-40px] bg-[url('/background.svg')] bg-contain bg-repeat-round lg:bg-cover lg:h-[866px] w-full lg:p-32 p-[117px] flex justify-end flex-1 flex-col lg:flex-row">
         <div className="flex flex-col items-center gap-y-8 justify-center">
           <div className="flex w-full lg:w-80 flex-col items-center gap-y-3 lg:mr-32">
             <ClerkLoading>
