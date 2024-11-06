@@ -14,9 +14,9 @@ import { Button } from "@/components/ui/button";
 export default function LandingPage() {
   return (
     <div className="w-full">
-      <div className="mx-auto mt-[-32px] lg:mt-[-40px] bg-[url('/background.svg')] bg-contain bg-repeat-round lg:bg-cover lg:h-[866px] w-full lg:p-32 p-[117px] flex justify-end flex-1 flex-col lg:flex-row">
-        <div className="flex flex-col items-center gap-y-8 justify-center">
-          <div className="flex w-full lg:w-80 flex-col items-center gap-y-3 lg:mr-32">
+      <div className="h-[221px] mx-auto lg:mt-[-40px] bg-[url('/background.svg')] bg-contain lg:bg-repeat-round bg-no-repeat lg:bg-cover lg:h-[866px] w-full lg:p-32 flex justify-end flex-1 flex-col lg:flex-row mt-[-2px]">
+        <div className="flex flex-col lg:items-center items-end gap-y-8 justify-center">
+          <div className="flex w-1/4 lg:h-auto h-20 mb-10 mr-14 lg:w-80 flex-col items-center gap-y-3 lg:mr-32">
             <ClerkLoading>
               <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
             </ClerkLoading>
@@ -27,7 +27,7 @@ export default function LandingPage() {
                   mode="modal"
                   fallbackRedirectUrl="/learn"
                 >
-                  <Button size="lg" variant="primary" className="w-full">
+                  <Button size="lg" variant="primary" className="w-full lg:text-base text-xs">
                     Bắt đầu
                   </Button>
                 </SignUpButton>
@@ -37,14 +37,14 @@ export default function LandingPage() {
                   fallbackRedirectUrl="/learn"
                   signUpFallbackRedirectUrl="/learn"
                 >
-                  <Button size="lg" variant="danger" className="w-full">
+                  <Button size="lg" variant="danger" className="w-full lg:text-base text-xs">
                     Đăng nhập
                   </Button>
                 </SignInButton>
               </SignedOut>
 
               <SignedIn>
-                <Button size="lg" variant="danger" className="w-full" asChild>
+                <Button size="lg" variant="danger" className="w-full text-xs" asChild>
                   <Link href="/learn">Chơi ngay</Link>
                 </Button>
               </SignedIn>

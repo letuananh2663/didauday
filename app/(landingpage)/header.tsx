@@ -31,17 +31,17 @@ export const Header = ({ className }: SidebarProps) => {
                     <Image src="/logo.svg" alt="Di Dau Day" height={160} width={160} />
                 </Link>
 
-                <div className="flex gap-x-3 pr-4">
+                <div className="flex lg:gap-x-3 lg:pr-4">
                     <ClerkLoading>
                         <Loader className="h-5 w-5 animate-spin text-muted-foreground" />
                     </ClerkLoading>
                     <ClerkLoaded>
-                        <Button className="text-rose-500 w-4" variant="ghost" size="lg">
-                            <a className="text-[.5rem]" href="/storyline">Cốt truyện</a>
+                        <Button className="text-rose-500 lg:w-full w-4" variant="ghost" size="lg">
+                            <a className="lg:text-base lg:font-bold text-[9px]" href="/storyline">Cốt truyện</a>
                         </Button>
 
-                        <Button className="text-rose-500 w-4" variant="ghost" size="lg">
-                            <a className="text-[.5rem]" href="/playrule">Luật chơi</a>
+                        <Button className="text-rose-500 lg:w-full w-4" variant="ghost" size="lg">
+                            <a className="lg:text-base lg:font-bold text-[9px]" href="/playrule">Luật chơi</a>
                         </Button>
 
                         <div className="flex self-center">
@@ -56,7 +56,7 @@ export const Header = ({ className }: SidebarProps) => {
                                 fallbackRedirectUrl="/learn"
                                 signUpFallbackRedirectUrl="/learn"
                             >
-                                <Button className="text-rose-500" size="lg" variant="ghost">
+                                <Button className="text-rose-500 lg:w-full w-4 lg:text-base lg:font-bold text-[9px]" size="lg" variant="ghost">
                                     Đăng nhập
                                 </Button>
                             </SignInButton>
