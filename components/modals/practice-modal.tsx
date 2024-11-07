@@ -32,12 +32,11 @@ export const PracticeModal = () => {
                     </div>
 
                     <DialogTitle className="text-center text-2xl font-bold">
-                        Practice lesson
+                        Ôn tập lại
                     </DialogTitle>
 
                     <DialogDescription className="text-center text-base">
-                        Use practice lessons to regain hearts and points. You cannot loose
-                        hearts or points in practice lessons.
+                        Cùng ôn tập lại các kiến thức cho vững hơn nhé.
                     </DialogDescription>
                 </DialogHeader>
 

@@ -44,7 +44,7 @@ const ShopPage = async () => {
                         Cửa hàng
                     </h1>
                     <p className="mb-6 text-center text-lg text-muted-foreground">
-                        Spend your points on cool stuff.
+                        Mại zô, mại zô!
                     </p>
 
                     <Items
