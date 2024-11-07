@@ -4,8 +4,6 @@ import Link from "next/link";
 export const Footer = () => {
 
     return (
-
-
         <footer className="bg-white dark:bg-rose-500">
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
@@ -14,32 +12,18 @@ export const Footer = () => {
                             <Image src="/icon.svg" alt="Di Dau Day" height={160} width={160} />
                         </Link>
                     </div>
-                    <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
                         <div>
                             <h2 className="mb-6 text-xl font-extrabold text-rose-500 dark:text-white">Về chúng tôi</h2>
                             <ul className="text-rose-500 dark:text-rose-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="" className="hover:underline">Giới thiệu</a>
+                                    <a href="/introduce" className="hover:underline">Giới thiệu</a>
                                 </li>
                                 <li className="mb-4">
-                                    <a href="" className="hover:underline">Đối tác</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="" className="hover:underline">Thành viên</a>
+                                    <a href="/partner" className="hover:underline">Đối tác</a>
                                 </li>
                                 <li>
-                                    <a href="" className="hover:underline">Liên hệ</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 className="mb-6 text-xl font-extrabold text-rose-500 dark:text-white">Trợ giúp</h2>
-                            <ul className="text-rose-500 dark:text-rose-400 font-medium">
-                                <li className="mb-4">
-                                    <a href="" className="hover:underline">Hướng dẫn đăng ký</a>
-                                </li>
-                                <li>
-                                    <a href="" className="hover:underline">Hướng dẫn thanh toán</a>
+                                    <a href="/contact" className="hover:underline">Liên hệ</a>
                                 </li>
                             </ul>
                         </div>
@@ -47,16 +31,10 @@ export const Footer = () => {
                             <h2 className="mb-6 text-xl font-extrabold text-rose-500 dark:text-white">Quyền riêng tư và điều khoản</h2>
                             <ul className="text-rose-500 dark:text-rose-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="" className="hover:underline">Nguyên tắc cộng đồng</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="" className="hover:underline">Điều khoản</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="" className="hover:underline">Quyền riêng tư</a>
+                                    <a href="/clause" className="hover:underline">Điều khoản</a>
                                 </li>
                                 <li>
-                                    <a href="" className="hover:underline">Bảo mật</a>
+                                    <a href="/policy" className="hover:underline">Chính sách bảo mật</a>
                                 </li>
                             </ul>
                         </div>
@@ -78,7 +56,6 @@ export const Footer = () => {
                 </div>
             </div>
         </footer>
-
     );
 };
 

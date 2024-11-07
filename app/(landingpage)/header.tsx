@@ -37,6 +37,10 @@ export const Header = ({ className }: SidebarProps) => {
                     </ClerkLoading>
                     <ClerkLoaded>
                         <Button className="text-rose-500 lg:w-full w-4" variant="ghost" size="lg">
+                            <a className="lg:text-base lg:font-bold text-[9px]" href="/discover">Khám phá</a>
+                        </Button>
+
+                        <Button className="text-rose-500 lg:w-full w-4" variant="ghost" size="lg">
                             <a className="lg:text-base lg:font-bold text-[9px]" href="/storyline">Cốt truyện</a>
                         </Button>
 
