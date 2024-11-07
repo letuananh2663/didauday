@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState, useTransition } from "react";
 import { useAudio, useMount, useWindowSize } from "react-use";
 
-import { MAX_HEARTS } from "@/constants";
 import { reduceHearts } from "@/actions/user-progress";
 import { useHeartsModal } from "@/store/use-hearts-modal";
 import { usePracticeModal } from "@/store/use-practice-modal";
