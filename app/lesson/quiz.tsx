@@ -128,7 +128,7 @@ export const Quiz = ({
                     .then((response) => {
                         if (response?.error === "hearts") {
                             openHeartsModal();
-                            console.error("Missing hearts")
+                            console.error("Hết tim mất ròi")
                             return;
                         }
 
@@ -137,7 +137,7 @@ export const Quiz = ({
 
                         // This is a practice
                         if (initialPercentage === 100) {
-                            setHearts((prev) => Math.min(prev + 1, MAX_HEARTS));
+                            setHearts(initialHearts);
                         }
                     })
                     .catch(() => toast.error("Something went wrong. Please try again."));
@@ -149,7 +149,7 @@ export const Quiz = ({
                     .then((response) => {
                         if (response?.error === "hearts") {
                             openHeartsModal();
-                            console.error("Missing hearts")
+                            console.error("Hết tim mất ròi")
                             return;
                         }
 
@@ -175,7 +175,7 @@ export const Quiz = ({
                 />
                 <div className="mx-auto flex h-full max-w-lg flex-col items-center justify-center gap-y-4 text-center lg:gap-y-8">
                     <Image
-                        src="/finish.svg"
+                        src="/mascot_fun.svg"
                         alt="Finish"
                         className="hidden lg:block"
                         height={100}
@@ -183,7 +183,7 @@ export const Quiz = ({
                     />
 
                     <Image
-                        src="/finish.svg"
+                        src="/mascot_fun.svg"
                         alt="Finish"
                         className="block lg:hidden"
                         height={100}

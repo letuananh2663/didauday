@@ -35,6 +35,11 @@ export const PracticeModal = () => {
                         Ôn tập lại
                     </DialogTitle>
 
+                    {/* TODO */}
+                    {/* <DialogDescription className="text-center text-base">
+                        Hãy ôn tập thật kĩ! Bạn vẫn sẽ bị mất 1 tim nếu như trả lời sai.
+                    </DialogDescription> */}
+
                     <DialogDescription className="text-center text-base">
                         Cùng ôn tập lại các kiến thức cho vững hơn nhé.
                     </DialogDescription>
