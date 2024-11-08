@@ -5,7 +5,7 @@ import { useTransition } from "react";
 import Image from "next/image";
 import { toast } from "sonner";
 
-import { createStripeUrl } from "@/actions/user-subscription";
+// import { createStripeUrl } from "@/actions/user-subscription";
 import { Button } from "@/components/ui/button";
 import { refillHearts } from "@/actions/user-progress";
 import { MAX_HEARTS, POINTS_TO_REFILL } from "@/constants";
@@ -20,7 +20,7 @@ type ItemsProps = {
 export const Items = ({
     hearts,
     points,
-    hasActiveSubscription,
+    // hasActiveSubscription,
 }: ItemsProps) => {
     const [pending, startTransition] = useTransition();
     const { open, setHeartOption } = usePayModal();
@@ -33,16 +33,16 @@ export const Items = ({
         });
     };
 
-    const onUpgrade = () => {
-        toast.loading("Redirecting to checkout...");
-        startTransition(() => {
-            createStripeUrl()
-                .then((response) => {
-                    if (response.data) window.location.href = response.data;
-                })
-                .catch(() => toast.error("Something went wrong."));
-        });
-    };
+    // const onUpgrade = () => {
+    //     toast.loading("Redirecting to checkout...");
+    //     startTransition(() => {
+    //         createStripeUrl()
+    //             .then((response) => {
+    //                 if (response.data) window.location.href = response.data;
+    //             })
+    //             .catch(() => toast.error("Something went wrong."));
+    //     });
+    // };
 
     const handleOpenModal = (heartOption: string) => {
         setHeartOption(heartOption);
@@ -123,7 +123,7 @@ export const Items = ({
                 </Button>
             </div>
 
-            <div className="flex w-full items-center gap-x-4 border-t-2 p-4 pt-8">
+            {/* <div className="flex w-full items-center gap-x-4 border-t-2 p-4 pt-8">
                 <Image src="/unlimited.svg" alt="Unlimited" height={60} width={60} />
 
                 <div className="flex-1">
@@ -135,7 +135,7 @@ export const Items = ({
                 <Button onClick={onUpgrade} disabled={pending} aria-disabled={pending}>
                     {hasActiveSubscription ? "Cài đặt" : "Nâng cấp bằng thẻ"}
                 </Button>
-            </div>
+            </div> */}
         </ul>
     );
 };
