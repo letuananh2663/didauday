@@ -84,8 +84,6 @@ export const PayModal = () => {
                             <h1 className="font-bold">0846202279</h1>
                             <h1>Số tiền:</h1>
                             <h1 className="font-bold">{getPrice()} vnđ</h1>
-                            <h1>Nội dung:</h1>
-                            <h1 className="font-bold">GOI {heartOption} TIM DI DAU DAY?!</h1>
                         </div>
                     </DialogDescription>
 
