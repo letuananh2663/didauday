@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/sonner";
+import { PayModal } from "@/components/modals/pay-modal";
 import { ExitModal } from "@/components/modals/exit-modal";
 import { HeartsModal } from "@/components/modals/hearts-modal";
 import { PracticeModal } from "@/components/modals/practice-modal";
@@ -29,6 +30,7 @@ export default function RootLayout({
           <HeartsModal />
           <PracticeModal />
           <DifficultModal />
+          <PayModal />
           {children}
         </body>
       </html>

@@ -9,6 +9,7 @@ import { createStripeUrl } from "@/actions/user-subscription";
 import { Button } from "@/components/ui/button";
 import { refillHearts } from "@/actions/user-progress";
 import { MAX_HEARTS, POINTS_TO_REFILL } from "@/constants";
+import { usePayModal } from "@/store/use-pay-modal";
 
 type ItemsProps = {
     hearts: number;
@@ -22,6 +23,7 @@ export const Items = ({
     hasActiveSubscription,
 }: ItemsProps) => {
     const [pending, startTransition] = useTransition();
+    const { open, setHeartOption } = usePayModal();
 
     const onRefillHearts = () => {
         if (pending || hearts === MAX_HEARTS || points < POINTS_TO_REFILL) return;
@@ -40,6 +42,11 @@ export const Items = ({
                 })
                 .catch(() => toast.error("Something went wrong."));
         });
+    };
+
+    const handleOpenModal = (heartOption: string) => {
+        setHeartOption(heartOption);
+        open();
     };
 
     return (
@@ -79,11 +86,11 @@ export const Items = ({
 
                 <div className="flex-1">
                     <p className="text-base font-bold text-neutral-700 lg:text-xl">
-                        1 tim
+                        5 tim
                     </p>
                 </div>
 
-                <Button onClick={() => { }} disabled={pending} aria-disabled={pending}>
+                <Button onClick={() => handleOpenModal("5")} disabled={pending} aria-disabled={pending}>
                     Nâng cấp
                 </Button>
             </div>
@@ -93,11 +100,25 @@ export const Items = ({
 
                 <div className="flex-1">
                     <p className="text-base font-bold text-neutral-700 lg:text-xl">
-                        3 tim
+                        15 tim
                     </p>
                 </div>
 
-                <Button onClick={() => { }} disabled={pending} aria-disabled={pending}>
+                <Button onClick={() => handleOpenModal("15")} disabled={pending} aria-disabled={pending}>
+                    Nâng cấp
+                </Button>
+            </div>
+
+            <div className="flex w-full items-center gap-x-4 border-t-2 p-4 pt-8">
+                <Image src="/unlimited.svg" alt="Unlimited" height={60} width={60} />
+
+                <div className="flex-1">
+                    <p className="text-base font-bold text-neutral-700 lg:text-xl">
+                        Tim không giới hạn
+                    </p>
+                </div>
+
+                <Button onClick={() => handleOpenModal("Không giới hạn")} disabled={pending} aria-disabled={pending}>
                     Nâng cấp
                 </Button>
             </div>
@@ -112,7 +133,7 @@ export const Items = ({
                 </div>
 
                 <Button onClick={onUpgrade} disabled={pending} aria-disabled={pending}>
-                    {hasActiveSubscription ? "Cài đặt" : "Nâng cấp"}
+                    {hasActiveSubscription ? "Cài đặt" : "Nâng cấp bằng thẻ"}
                 </Button>
             </div>
         </ul>
